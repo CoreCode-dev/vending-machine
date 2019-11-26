@@ -1,0 +1,64 @@
+body{
+	
+	background-color:black;
+	
+}
+
+.Main{
+	width:500px;
+	height:700px;
+	margin-left:28%;
+	margin-top:50px;
+	background-color:white;
+}
+.Main #display{
+	
+	width:300px;
+	height:450px;
+	background-color:gray;
+	position:relative;
+	top:100px;
+	left:40px;
+	
+}
+.Main #keyboard{
+	width:50px;
+	height:350px;
+	position:relative;
+	left: 400px;
+	bottom: 350px;
+	
+}
+.Main #keyboard button{
+	width:50px;
+	height:50px;
+	border-radius:10px;
+}
+
+.Main #hole{
+	
+	width:150px;
+	height:80px;
+	background-color:gray;
+	position:relative;
+	left: 120px;
+	bottom: 200px;
+}
+
+.Main #money_slot{
+	width:100px;
+	height:30px;
+	background-color:gray;
+	position:relative;
+	left: 370px;
+	bottom: 380px;
+}
+
+.Main #card_slot{
+	width:100px;
+	height:30px;
+	background-color:gray;
+	position:relative;
+	left: 370px;
+	bottom: 360px;
+}
