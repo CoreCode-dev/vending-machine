@@ -1,6 +1,6 @@
 body{
 	
-	background-color:black;
+	background-color: #000000;
 	
 }
 
@@ -9,13 +9,14 @@ body{
 	height:700px;
 	margin-left:28%;
 	margin-top:50px;
-	background-color:white;
+	background-color: #8197b1;
 }
 .Main #display{
 	
 	width:300px;
 	height:450px;
-	background-color:gray;
+	background-color: #000000;
+	box-shadow: inset 30px -30px #131313;
 	position:relative;
 	top:100px;
 	left:40px;
@@ -33,13 +34,16 @@ body{
 	width:50px;
 	height:50px;
 	border-radius:10px;
+    background-color: #6d5f18;
 }
+
 
 .Main #hole{
 	
 	width:150px;
 	height:80px;
-	background-color:gray;
+    background-color: #040404;
+    box-shadow: inset 30px -30px #131313;
 	position:relative;
 	left: 120px;
 	bottom: 200px;
@@ -47,8 +51,9 @@ body{
 
 .Main #money_slot{
 	width:100px;
-	height:30px;
-	background-color:gray;
+	height:10px;
+    background-color: #111111;
+
 	position:relative;
 	left: 370px;
 	bottom: 380px;
@@ -56,9 +61,32 @@ body{
 
 .Main #card_slot{
 	width:100px;
-	height:30px;
-	background-color:gray;
+	height:10px;
+    background-color: #101010;
+
 	position:relative;
 	left: 370px;
 	bottom: 360px;
 }
+
+.inventory{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    display: block;
+    border-radius: 25px;
+    background-color: aliceblue;
+    bottom: 19px;
+    right: 19px;
+    transition-property: width, height;
+    transition: 1s ease-in;
+
+
+}
+.inventory #inventory_option{
+
+    display: none;
+
+}
+
+

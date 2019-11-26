@@ -1,35 +1,24 @@
- let box = {};
- 
- //EXPEREMNTAL FUNCTIONS
- function add_to_box(type, text, price){
-	 
- }
- 
-  function delete_type(text){
-	 
-	 
- }
- 
- function check_size(){
+let box ={};
 
-	let size_type_max = 7;
-	let size_typeBox_max = 5;
-	
- }
- 
- //END EXPEREMNTAL FUNCTIONS
- 
- function set_box_default(){
-	 
-	 let default_labels = ["","","","","","",""];
-	 let default_colors = ["","","","","","",""];
-	 
-	 for(let i=0;i<7;i++){
-		 let bottle = { color:default_colors[i], label:default_labels[i]};
-	 }
-	 
- }
- 
+
+
+function openMenu(){
+
+    let menu = document.getElementsByClassName("inventory");
+    let menu_option = menu.getElementById("inventory_option");
+
+
+    if(menu.style.width!="100px") {
+        menu.style.width = "100px";
+        menu.style.height = "300px";
+        menu_option.display = "block";
+    }
+    else{
+        menu.style.width = "50px";
+        menu.style.height = "50px";
+        menu_option.display = "none";
+    }
+}
 
  
 
