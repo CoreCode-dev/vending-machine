@@ -37,6 +37,14 @@ body{
     background-color: #6d5f18;
 	transition: background-color 500ms ease-in;
 }
+.Main #keyboard #counter{
+
+	width: 50px;
+	height: 30px;
+	font-size: 20px;
+	background-color: #5b993e;
+
+}
 
 .Main #keyboard button:hover{
 	background-color: #9a8522;
