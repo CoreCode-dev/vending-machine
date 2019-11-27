@@ -1,6 +1,6 @@
 body{
-	
-	background-color: #000000;
+
+	background-image: url("images/back.png");
 	
 }
 
@@ -9,7 +9,7 @@ body{
 	height:700px;
 	margin-left:28%;
 	margin-top:50px;
-	background-color: #8197b1;
+	background-color: #b15c44;
 }
 .Main #display{
 	
@@ -35,6 +35,11 @@ body{
 	height:50px;
 	border-radius:10px;
     background-color: #6d5f18;
+	transition: background-color 500ms ease-in;
+}
+
+.Main #keyboard button:hover{
+	background-color: #9a8522;
 }
 
 
@@ -70,23 +75,51 @@ body{
 }
 
 .inventory{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 200px;
     position: fixed;
     display: block;
     border-radius: 25px;
-    background-color: aliceblue;
+    background-color: #aaa7f7;
     bottom: 19px;
     right: 19px;
-    transition-property: width, height;
-    transition: 1s ease-in;
+    transition-property: background-color;
+    transition: 500ms ease-in;
 
 
 }
-.inventory #inventory_option{
+.inventory:hover{
 
-    display: none;
+	background-color: #81d453;
 
 }
 
+.inventory #pay{
+
+	width:80px;
+	position:relative;
+	top:20px;
+	left:10px;
+
+}
+.inventory #card{
+
+	width:50px;
+	height:50px;
+	position: relative;
+	top:60px;
+	left:25px;
+	background-image: url("images/card.png");
+
+}
+.inventory #cash{
+
+	width:50px;
+	height:50px;
+	position: relative;
+	top:50px;
+	left:25px;
+	background-image: url("images/cash.png");
+
+}
 

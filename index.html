@@ -5,7 +5,6 @@
 <head>
 	<meta charset = "UTF-8">
 	<link  rel = "stylesheet" href = "style.css">
-	<script src = "engine.js"></script>
 	<title>Title</title>
 </head>
 
@@ -20,22 +19,27 @@
 		<button></button>
 		<button></button>
 		<button></button>
-		<button></button>
 		</div>
-		<div id = "hole"></div>
+		<div id = "hole">
+
+
+		</div>
 		<div id = "money_slot"></div>
 		<div id = "card_slot"></div>
 		
 	</div>
 
-	<div class = "inventory" onclick="openMenu();">
-		<div id = "inventory_option">
-
-			<input type="text">
+	<div class = "inventory">
 
 
-		</div>
+			<input type="text" id = "pay">
+			<button id = "cash"></button>
+			<button id = "card"></button>
+
 
 	</div>
+	<script src = "engine.js"></script>
+
+
 </body>
 </html>

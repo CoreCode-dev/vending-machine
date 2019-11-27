@@ -1,26 +1,57 @@
-let box ={};
+let box =[];
+
+let Main = document.getElementsByClassName("Main");
+let display = Main[0].children["display"];
+let display_ctx = display.getContext('2d');
+
+function setBox() { //120x50 px
+    let image = new Image();
+    let images = ["","","","","",""];
+    image.src = "images/cash.png";
 
 
 
-function openMenu(){
+    for( let i =0; i<3;i++){
 
-    let menu = document.getElementsByClassName("inventory");
-    let menu_option = menu.getElementById("inventory_option");
+        let section = {id : i, amount:3, pos:[10,10+50*i], image:image};
+        let section2 = {id : i+1, amount:3, pos:[160,10+50*i], image:image};
 
+        box.push(section);box.push(section2);
 
-    if(menu.style.width!="100px") {
-        menu.style.width = "100px";
-        menu.style.height = "300px";
-        menu_option.display = "block";
     }
-    else{
-        menu.style.width = "50px";
-        menu.style.height = "50px";
-        menu_option.display = "none";
+    printBox();
+}
+
+
+
+
+function printBox(){
+
+    display_ctx.clearRect(0,0 , display.width, display.height);
+
+    for(let i=0;i<box.length;i++){
+
+        let x = box[i].pos[0];
+        let y = box[i].pos[1];
+        if(box[i].amount!=0)display_ctx.drawImage(box[i].image, x,y, 120, 30);
+        else{
+            box.splice(i,1);
+        }
     }
 }
 
- 
+function CheckBox(){
+
+    if(box.length==0){
+        setBox();
+    }
+
+}
+
+
+
+let check_box = setInterval(CheckBox, 2000);
+
 
  
  
