@@ -3,7 +3,7 @@
 <html>
 	
 <head>
-	<meta charset = "UTF-8">
+	<meta charset = "UTF-8" lang="ru">
 	<link  rel = "stylesheet" href = "style.css">
 	<title>Title</title>
 </head>
@@ -13,13 +13,14 @@
 		
 		<canvas id = "display"></canvas>
 		<div id = "keyboard">
-		<button onclick="getThing(0)">1</button>
-		<button onclick="getThing(1)">2</button>
-		<button onclick="getThing(2)">3</button>
-		<button onclick="getThing(3)">4</button>
-		<button onclick="getThing(4)">5</button>
-		<button onclick="getThing(5)">6</button>
+		<button onclick="getThing(0,2)">1</button>
+		<button onclick="getThing(1,6)">2</button>
+		<button onclick="getThing(2,4)">3</button>
+		<button onclick="getThing(3,3)">4</button>
+		<button onclick="getThing(4,2)">5</button>
+		<button onclick="getThing(5,3)">6</button>
 			<p id="counter">0</p>
+			<p id="information">Автомат сдачи </br>не выдает!</p>
 		</div>
 		<canvas id = "hole" onclick="hole_ctx.clearRect(0,0 , hole.width, hole.height);"></canvas>
 		<div id = "money_slot"></div>
@@ -31,8 +32,8 @@
 
 
 			<input type="text" id = "pay">
-			<button id = "cash"></button>
-			<button id = "card"></button>
+			<button id = "cash" onclick="setBalance();"></button>
+			<button id = "card" onclick="card_flag=true;"></button>
 
 
 	</div>
