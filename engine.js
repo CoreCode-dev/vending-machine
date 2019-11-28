@@ -18,13 +18,8 @@ let card_flag = false;
 
 function setBox() { //120x50 px
     //let image = new Image();
-    let images = ["card","cash","card","cash","cash","cash"];
-
-
-
+    let images = ["obj1","obj2","obj3","obj4","obj5","obj6"];
     let priceList = [2,6,4,3,2,3];
-
-    image.src = "images/cash.png";
 
 
     let id = 0;
@@ -33,10 +28,10 @@ function setBox() { //120x50 px
 
         let id_image = Math.floor(Math.random()*[1,2,3].length);
         let image1 = new Image(); image1.src = "images/"+images[ id_image ]+".png";
-        images.splice(id_image, 1);
+        console.log(images[ id_image ]+".png");
         id_image = Math.floor(Math.random()*[1,2,3].length);
         let image2 = new Image(); image2.src = "images/"+images[ id_image ]+".png";
-        images.splice(id_image, 1);
+
 
         let section = {id : id, amount:3, pos:[10,10+50*i], image:image1, price:priceList[id]};
         id++;
@@ -54,7 +49,7 @@ function setBox() { //120x50 px
 function printBox(){
 
     display_ctx.clearRect(0,0 , display.width, display.height);
-    display_ctx.fillStyle = "#ff0600";
+    display_ctx.fillStyle = "#00ff1f";
     display_ctx.font = "12pt Arial";
     for(let i=0;i<box.length;i++){
         let x = box[i].pos[0];
@@ -67,14 +62,14 @@ function printBox(){
 }
 
 function CheckBox(){
-
+    printBox();
     if(box.length==0){
         setBox();
     }
 
 }
 
-setInterval(CheckBox, 2000);
+setInterval(CheckBox, 1000);
 
 
 
@@ -83,16 +78,29 @@ function setBalance(){
 
     let data = money_slot.value;
     money_slot.value="";
-    balance += (isFinite(data))?parseInt(data):0;
+
+    if(data[0]!="-"&&data!=""){balance += (isFinite(data))? parseInt(data):0;}
 
     counter.innerHTML=balance;
 
 }
 
 
+function soundClick( name ) {
+
+    var audio = new Audio(); // Создаём новый элемент Audio
+    audio.src = "sounds/"+name+'.wav'; // Указываем путь к звуку "клика"
+    audio.autoplay = true; // Автоматически запускаем
+
+}
+
+
+let isNotFall = true;
+
+
 function getThing( id, cost){
-    if( card_flag||balance-cost>=0){
-        if(!card_flag)balance-=cost;
+    if( (card_flag||balance-cost>=0)&&isNotFall){
+
         card_flag = false;
         hole_ctx.clearRect(0, 0, hole.width, hole.height);
         printBox();
@@ -106,6 +114,13 @@ function getThing( id, cost){
         }
 
         if (section != undefined) {
+
+            soundClick("main");
+
+            if(!(balance-cost<0))balance-=cost;
+
+            isNotFall = false;
+
             let obj = {pos: section.pos.concat(), image: section.image};
 
             let timer = setInterval(function () {
@@ -117,8 +132,9 @@ function getThing( id, cost){
 
                     printBox();
                     hole_ctx.drawImage(obj.image, 10, 10, 280, 120);
+                    isNotFall = true;
                     clearInterval(timer);
-                    return;
+
                 }
 
 
